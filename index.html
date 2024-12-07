@@ -22,248 +22,90 @@
         </nav>
     </header>
 
-    <main>
-        <nav class="navbar">
-            <div class="logo">Quantum Physics Hub</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#concepts">Basic Concepts</a></li>
-                <li><a href="#interactive">Interactive Models</a></li>
-                <li><a href="#mathematics">Mathematics</a></li>
-                <li><a href="#applications">Applications</a></li>
-                <li><a href="#quiz">Quiz</a></li>
-                <li><a href="#resources">Resources</a></li>
-            </ul>
-        </nav>
-
-        <section id="home" class="hero-section">
-            <div class="hero-background">
-                <img src="images/hero_particles.svg" alt="Quantum Particles" class="hero-particles">
-            </div>
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
             <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="welcome-text">Welcome to</span>
-                    <span class="quantum-text">Quantum Physics</span>
-                </h1>
-                <p class="hero-description">Discover the fascinating world of quantum mechanics through interactive learning</p>
-                <div class="hero-buttons">
-                    <button class="btn primary-btn" onclick="startLearning()">Start Learning</button>
-                    <button class="btn secondary-btn" onclick="takeTour()">Take a Tour</button>
+                <h1 class="hero-title">Quantum Physics Interactive</h1>
+                <p class="hero-subtitle">Explore the fascinating world of quantum mechanics through interactive visualizations</p>
+                <div class="hero-cta">
+                    <a href="#concepts" class="btn btn-primary">Start Learning</a>
+                    <a href="#interactive" class="btn btn-secondary">Try Experiments</a>
                 </div>
-                <div class="hero-features">
-                    <div class="feature">
-                        <img src="images/wave_particle_diagram.svg" alt="Wave Particle" class="feature-icon">
-                        <span>Wave-Particle Duality</span>
-                    </div>
-                    <div class="feature">
-                        <img src="images/quantum_superposition.svg" alt="Superposition" class="feature-icon">
-                        <span>Quantum Superposition</span>
-                    </div>
-                    <div class="feature">
-                        <img src="images/quantum_entanglement.svg" alt="Entanglement" class="feature-icon">
-                        <span>Quantum Entanglement</span>
-                    </div>
-                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="images/hero_particles.svg" alt="Quantum Particles Animation" class="particles-animation">
             </div>
         </section>
 
-        <section id="concepts" class="concepts">
-            <h2 class="glow-text float">Fundamental Concepts</h2>
+        <!-- Featured Concepts -->
+        <section id="concepts" class="featured-concepts">
+            <h2 class="section-title">Core Quantum Concepts</h2>
             <div class="concept-grid">
-                <div class="concept-card magnetic">
-                    <div class="concept-visual">
-                        <img src="images/wave_particle_diagram.svg" alt="Wave-Particle Duality" class="concept-img">
-                        <img src="images/double_slit_setup.svg" alt="Double Slit Experiment" class="concept-overlay">
-                    </div>
+                <article class="concept-card">
+                    <img src="images/quantum_states.svg" alt="Quantum Superposition" class="concept-image">
+                    <h3>Superposition</h3>
+                    <p>Discover how quantum systems can exist in multiple states simultaneously</p>
+                </article>
+                <article class="concept-card">
+                    <img src="images/qubit_sphere_detailed.svg" alt="Qubit States" class="concept-image">
+                    <h3>Quantum States</h3>
+                    <p>Explore the mathematics behind quantum state representation</p>
+                </article>
+                <article class="concept-card">
+                    <img src="images/wave_particle_diagram.svg" alt="Wave-Particle Duality" class="concept-image">
                     <h3>Wave-Particle Duality</h3>
-                    <div class="concept-content">
-                        <p>Wave-particle duality is a fundamental principle of quantum mechanics that describes how every particle or quantum entity can be described as either a wave or a particle. Key points:</p>
-                        <div class="key-points">
-                            <div class="point">
-                                <p>Particles like electrons and photons can behave as both waves and particles</p>
-                                <img src="images/wave_particle_diagram.svg" alt="Wave and Particle Behavior" class="concept-image">
-                            </div>
-                            <div class="point">
-                                <p>The wave nature is described by the wave function</p>
-                                <img src="images/wave_function.svg" alt="Wave Function" class="concept-image">
-                            </div>
-                            <div class="point">
-                                <p>Measurement causes the wave function to collapse into a particle state</p>
-                                <img src="images/measurement_collapse.svg" alt="Wave Function Collapse" class="concept-image">
-                            </div>
-                        </div>
-
-                        <div class="example-box">
-                            <h3>Real-World Example:</h3>
-                            <p>Light behaving as both a wave (interference in double-slit experiment) and as particles (photoelectric effect)</p>
-                            <div class="example-images">
-                                <img src="images/double_slit_setup.svg" alt="Double Slit Experiment" class="example-image">
-                                <img src="images/photoelectric_effect.svg" alt="Photoelectric Effect" class="example-image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="concept-card magnetic">
-                    <div class="concept-visual">
-                        <img src="images/superposition_states.svg" alt="Quantum Superposition" class="concept-img">
-                        <img src="images/schrodinger_cat.svg" alt="Schrödinger's Cat" class="concept-overlay">
-                    </div>
-                    <h3>Quantum Superposition</h3>
-                    <div class="interactive-demo" id="superposition-demo">
-                        <img src="images/qubit_sphere.svg" alt="Qubit Sphere" class="demo-img">
-                    </div>
-                    <div class="concept-content">
-                        <p>Quantum superposition states that particles can exist in multiple states simultaneously until measured. Understanding superposition:</p>
-                        <ul>
-                            <li>A quantum system can exist in multiple states at once</li>
-                            <li>Measurement forces the system to choose one state</li>
-                            <li>Forms the basis for quantum computing</li>
-                        </ul>
-                        <div class="example-box">
-                            <h4>Famous Example:</h4>
-                            <p>Schrödinger's cat thought experiment - a cat that is simultaneously alive and dead</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="concept-card magnetic">
-                    <div class="concept-visual">
-                        <img src="images/entangled_particles.svg" alt="Quantum Entanglement" class="concept-img">
-                        <img src="images/bell_states.svg" alt="Bell States" class="concept-overlay">
-                    </div>
-                    <h3>Quantum Entanglement</h3>
-                    <div class="interactive-demo" id="entanglement-demo">
-                        <img src="images/quantum_teleportation.svg" alt="Quantum Teleportation" class="demo-img">
-                    </div>
-                    <div class="concept-content">
-                        <p>Quantum entanglement occurs when particles become correlated in such a way that the quantum state of each particle cannot be described independently. Key aspects:</p>
-                        <ul>
-                            <li>Einstein called it "spooky action at a distance"</li>
-                            <li>Measuring one particle instantly affects its entangled partner</li>
-                            <li>Used in quantum cryptography and quantum computing</li>
-                        </ul>
-                        <div class="example-box">
-                            <h4>Application:</h4>
-                            <p>Quantum cryptography uses entanglement for secure communication</p>
-                        </div>
-                    </div>
-                </div>
+                    <p>Understand the dual nature of quantum entities</p>
+                </article>
+                <article class="concept-card">
+                    <img src="images/double_slit.svg" alt="Double Slit Experiment" class="concept-image">
+                    <h3>Double Slit Experiment</h3>
+                    <p>Witness the fundamental principles of quantum mechanics</p>
+                </article>
             </div>
         </section>
 
-        <section id="mathematics" class="mathematics">
-            <h2 class="glow-text">Mathematical Foundation</h2>
-            <div class="math-grid">
-                <div class="math-card magnetic">
-                    <div class="math-visual">
-                        <img src="images/wavefunction_1d.svg" alt="1D Wave Function" class="math-img">
-                        <img src="images/wavefunction_2d.svg" alt="2D Wave Function" class="math-overlay">
-                    </div>
-                    <h3>Wave Functions</h3>
-                    <div class="math-content">
-                        <p>The wave function (Ψ) describes the quantum state of an isolated quantum system:</p>
-                        <div class="equation">Ψ(x,t) = Ae^(i(kx-ωt))</div>
-                        <p>Where:</p>
-                        <ul>
-                            <li>A = amplitude</li>
-                            <li>k = wave number</li>
-                            <li>ω = angular frequency</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="math-card magnetic">
-                    <div class="math-visual">
-                        <img src="images/energy_levels.svg" alt="Energy Levels" class="math-img">
-                        <img src="images/harmonic_oscillator.svg" alt="Quantum Harmonic Oscillator" class="math-overlay">
-                    </div>
-                    <h3>Schrödinger Equation</h3>
-                    <div class="math-content">
-                        <p>The fundamental equation of quantum mechanics:</p>
-                        <div class="equation">iℏ∂Ψ/∂t = ĤΨ</div>
-                        <p>Components:</p>
-                        <ul>
-                            <li>ℏ = reduced Planck's constant</li>
-                            <li>Ĥ = Hamiltonian operator</li>
-                            <li>Ψ = wave function</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        <!-- Interactive Section -->
         <section id="interactive" class="interactive-section">
-            <h2 class="glow-text">Interactive Experiments</h2>
-            <div class="experiment-container">
-                <div class="experiment magnetic" id="double-slit">
-                    <div class="experiment-visual">
-                        <img src="images/stern_gerlach.svg" alt="Stern-Gerlach Experiment" class="experiment-img">
-                        <img src="images/quantum_eraser.svg" alt="Quantum Eraser" class="experiment-overlay">
+            <h2 class="section-title">Interactive Experiments</h2>
+            <div class="experiment-showcase">
+                <div class="experiment-preview">
+                    <img src="images/stern_gerlach.svg" alt="Stern-Gerlach Experiment" class="experiment-image">
+                    <div class="experiment-details">
+                        <h3>Stern-Gerlach Experiment</h3>
+                        <p>Manipulate magnetic fields to observe quantum spin properties</p>
+                        <button class="btn btn-experiment">Launch Experiment</button>
                     </div>
-                    <h3>Double-Slit Experiment</h3>
-                    <div class="simulation-area"></div>
-                    <div class="controls">
-                        <button class="control-btn" id="start-experiment">Start</button>
-                        <button class="control-btn" id="reset-experiment">Reset</button>
+                </div>
+                <div class="experiment-preview">
+                    <img src="images/quantum_teleportation.svg" alt="Quantum Teleportation" class="experiment-image">
+                    <div class="experiment-details">
+                        <h3>Quantum Teleportation</h3>
+                        <p>See how quantum information can be transmitted using entanglement</p>
+                        <button class="btn btn-experiment">Launch Experiment</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="applications" class="applications">
-            <h2 class="glow-text">Real-World Applications</h2>
-            <div class="application-grid">
-                <div class="application-card magnetic">
-                    <div class="application-visual">
-                        <img src="images/quantum_computer.svg" alt="Quantum Computer" class="application-img">
-                    </div>
-                    <h3>Quantum Computing</h3>
-                    <p>Learn how quantum mechanics enables powerful quantum computers using qubits and quantum gates.</p>
-                    <div class="interactive-demo" id="qubit-demo"></div>
+        <!-- Learning Path -->
+        <section class="learning-path">
+            <h2 class="section-title">Your Quantum Journey</h2>
+            <div class="path-steps">
+                <div class="path-step">
+                    <div class="step-number">1</div>
+                    <h3>Fundamentals</h3>
+                    <p>Master the basic principles of quantum mechanics</p>
                 </div>
-                <div class="application-card magnetic">
-                    <div class="application-visual">
-                        <img src="images/quantum_cryptography.svg" alt="Quantum Cryptography" class="application-img">
-                    </div>
-                    <h3>Quantum Cryptography</h3>
-                    <p>Discover how quantum principles ensure unbreakable encryption for secure communication.</p>
+                <div class="path-step">
+                    <div class="step-number">2</div>
+                    <h3>Mathematics</h3>
+                    <p>Learn the mathematical framework behind quantum theory</p>
                 </div>
-                <div class="application-card magnetic">
-                    <div class="application-visual">
-                        <img src="images/quantum_sensor.svg" alt="Quantum Sensors" class="application-img">
-                    </div>
-                    <h3>Quantum Sensors</h3>
-                    <p>Explore how quantum systems create ultra-sensitive measurements for various applications.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="quiz" class="quiz-section">
-            <h2 class="glow-text">Test Your Knowledge</h2>
-            <div class="quiz-container">
-                <div id="quiz-questions">
-                    <!-- Questions will be dynamically loaded -->
-                </div>
-                <button id="start-quiz" class="quiz-btn">Start Quiz</button>
-            </div>
-        </section>
-
-        <section id="resources" class="resources">
-            <h2 class="glow-text">Learning Resources</h2>
-            <div class="resource-grid">
-                <div class="resource-card">
-                    <h3>Video Tutorials</h3>
-                    <ul class="resource-list">
-                        <li>Introduction to Quantum Mechanics</li>
-                        <li>Understanding Wave Functions</li>
-                        <li>Quantum Measurement</li>
-                    </ul>
-                </div>
-                <div class="resource-card">
-                    <h3>Practice Problems</h3>
-                    <ul class="resource-list">
-                        <li>Basic Quantum Math</li>
-                        <li>Thought Experiments</li>
-                        <li>Quiz Yourself</li>
-                    </ul>
+                <div class="path-step">
+                    <div class="step-number">3</div>
+                    <h3>Applications</h3>
+                    <p>Explore real-world quantum technologies</p>
                 </div>
             </div>
         </section>

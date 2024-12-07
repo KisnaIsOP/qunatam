@@ -1,3 +1,4 @@
+/* Reset and Base Styles */
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
@@ -476,11 +477,11 @@ body::before {
     height: auto;
     margin: 1rem 0;
     border-radius: 8px;
-    transition: filter 0.3s ease;
+    transition: none;
 }
 
 .concept-image:hover {
-    filter: brightness(1.2);
+    filter: none;
 }
 
 .example-box {
@@ -502,11 +503,11 @@ body::before {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    transition: transform 0.3s ease;
+    transition: none;
 }
 
 .example-image:hover {
-    transform: scale(1.05);
+    transform: none;
 }
 
 /* Responsive Design */
@@ -650,7 +651,7 @@ body::before {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: none;
 }
 
 .concept-overlay,
@@ -663,21 +664,21 @@ body::before {
     height: 100%;
     opacity: 0;
     transform: scale(1.1);
-    transition: all 0.3s ease;
+    transition: none;
 }
 
 .concept-visual:hover .concept-img,
 .math-visual:hover .math-img,
 .experiment-visual:hover .experiment-img,
 .application-visual:hover .application-img {
-    transform: scale(1.1);
+    transform: none;
 }
 
 .concept-visual:hover .concept-overlay,
 .math-visual:hover .math-overlay,
 .experiment-visual:hover .experiment-overlay {
-    opacity: 1;
-    transform: scale(1);
+    opacity: 0;
+    transform: none;
 }
 
 .demo-img {
@@ -686,12 +687,12 @@ body::before {
     margin: 1rem 0;
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: none;
 }
 
 .demo-img:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: none;
+    box-shadow: none;
 }
 
 /* Image Loading Animation */
@@ -706,11 +707,11 @@ body::before {
 
 /* Image Hover Effects */
 .hover-glow {
-    transition: filter 0.3s ease;
+    transition: none;
 }
 
 .hover-glow:hover {
-    filter: drop-shadow(0 0 10px var(--accent-color));
+    filter: none;
 }
 
 /* Responsive Images */
@@ -919,5 +920,464 @@ body::before {
     
     .btn {
         width: 100%;
+    }
+}
+
+.terms-section {
+    background-color: #112240;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.terms-section h2 {
+    color: #64ffda;
+    margin-bottom: 15px;
+}
+
+.terms-section p {
+    color: #8892b0;
+    line-height: 1.6;
+}
+
+.topic-section {
+    background-color: #112240;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.topic-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px 0;
+    border-radius: 4px;
+    transition: none;
+}
+
+.topic-section h2 {
+    color: #64ffda;
+    margin-bottom: 15px;
+}
+
+.topic-section p {
+    color: #8892b0;
+    line-height: 1.6;
+}
+
+.topic-section:hover {
+    transform: none;
+}
+
+.topic-section img:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.interactive-experiments {
+    background-color: #112240;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.interactive-experiments img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px 0;
+    border-radius: 4px;
+    transition: none;
+}
+
+.real-world-applications {
+    background-color: #112240;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.real-world-applications img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px 0;
+    border-radius: 4px;
+    transition: none;
+}
+
+/* Layout Grid System */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Section Layouts */
+.section-container {
+    grid-column: span 12;
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Quantum Concepts Grid */
+.quantum-concepts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.concept-card {
+    background-color: #112240;
+    border-radius: 8px;
+    padding: 2rem;
+    height: 100%;
+}
+
+/* Mathematical Foundation */
+.math-foundation {
+    grid-column: span 12;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #112240;
+    border-radius: 8px;
+}
+
+.equation-section {
+    padding: 2rem;
+}
+
+/* Interactive Experiments */
+.experiments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.experiment-card {
+    background-color: #112240;
+    border-radius: 8px;
+    padding: 2rem;
+    height: 100%;
+}
+
+/* Real-World Applications */
+.applications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.application-card {
+    background-color: #112240;
+    border-radius: 8px;
+    padding: 2rem;
+    height: 100%;
+}
+
+/* Images and Content */
+.content-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.content-text {
+    color: #8892b0;
+    line-height: 1.6;
+}
+
+/* Headers */
+.section-header {
+    color: #64ffda;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    grid-column: span 12;
+}
+
+.subsection-header {
+    color: #64ffda;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .math-foundation {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-grid {
+        padding: 1rem;
+    }
+    
+    .quantum-concepts,
+    .experiments-grid,
+    .applications-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-container {
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Navigation */
+.section-nav {
+    position: sticky;
+    top: 0;
+    background-color: #0a192f;
+    padding: 1rem 2rem;
+    z-index: 100;
+    border-bottom: 1px solid #112240;
+}
+
+.nav-list {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    color: #8892b0;
+    text-decoration: none;
+}
+
+.nav-item.active {
+    color: #64ffda;
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.mb-2 { margin-bottom: 2rem; }
+.p-2 { padding: 2rem; }
+
+/* Main Content Styles */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80vh;
+    padding: 2rem 0;
+    background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+    padding-right: 2rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    color: #ccd6f6;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #8892b0;
+    margin-bottom: 2rem;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.particles-animation {
+    max-width: 100%;
+    height: auto;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Featured Concepts Section */
+.featured-concepts {
+    padding: 4rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #ccd6f6;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.concept-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.concept-card {
+    background: #112240;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.concept-card:hover {
+    transform: translateY(-5px);
+}
+
+.concept-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* Interactive Section */
+.interactive-section {
+    padding: 4rem 0;
+    background: #0a192f;
+}
+
+.experiment-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.experiment-preview {
+    background: #112240;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.experiment-image {
+    width: 100%;
+    height: auto;
+}
+
+.experiment-details {
+    padding: 1.5rem;
+}
+
+/* Learning Path */
+.learning-path {
+    padding: 4rem 0;
+}
+
+.path-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 2rem 1rem;
+}
+
+.path-step {
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #64ffda;
+    color: #0a192f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-weight: bold;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #64ffda;
+    color: #0a192f;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid #64ffda;
+    color: #64ffda;
+}
+
+.btn-experiment {
+    background: #64ffda;
+    color: #0a192f;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
     }
 }
