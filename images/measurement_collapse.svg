@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <defs>
+        <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0a192f;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#112240;stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- Particle Glow -->
+        <radialGradient id="particle-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#64ffda;stop-opacity:0.5"/>
+            <stop offset="100%" style="stop-color:#64ffda;stop-opacity:0"/>
+        </radialGradient>
+    </defs>
+
+    <!-- Background Rectangle -->
+    <rect width="100%" height="100%" fill="url(#bg-gradient)"/>
+
+    <!-- Before Measurement (Wave) -->
+    <g transform="translate(50, 80)">
+        <path d="M 0 0 C 25 -30, 50 -30, 75 0 C 100 30, 125 30, 150 0"
+              fill="none" stroke="#64ffda" stroke-width="2" stroke-opacity="0.8">
+            <animate attributeName="stroke-opacity"
+                     values="0.8;0;0"
+                     dur="2s" repeatCount="indefinite"/>
+        </path>
+    </g>
+
+    <!-- Measurement Arrow -->
+    <g transform="translate(150, 100)">
+        <line x1="-20" y1="-20" x2="20" y2="20" stroke="#8892b0" stroke-width="2">
+            <animate attributeName="stroke-opacity"
+                     values="0;1;1"
+                     dur="2s" repeatCount="indefinite"/>
+        </line>
+        <text x="25" y="0" style="font-family: Arial; font-size: 12px; fill: #8892b0;">
+            Measurement
+        </text>
+    </g>
+
+    <!-- After Measurement (Particle) -->
+    <g transform="translate(200, 120)">
+        <circle r="20" fill="url(#particle-glow)">
+            <animate attributeName="r"
+                     values="0;20;20"
+                     dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle r="5" fill="#64ffda">
+            <animate attributeName="r"
+                     values="0;5;5"
+                     dur="2s" repeatCount="indefinite"/>
+        </circle>
+    </g>
+
+    <!-- Labels -->
+    <text x="50" y="40" style="font-family: Arial; font-size: 12px; fill: #8892b0;">Wave State</text>
+    <text x="200" y="160" style="font-family: Arial; font-size: 12px; fill: #8892b0;">Particle State</text>
+</svg>

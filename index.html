@@ -36,20 +36,33 @@
             </ul>
         </nav>
 
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1 class="glow-text">Welcome to Quantum Physics</h1>
-                <p>Discover the fascinating world of quantum mechanics through interactive learning</p>
-                <div class="hero-buttons">
-                    <button class="start-btn interactive-btn magnetic">Start Learning</button>
-                    <button class="take-tour-btn interactive-btn magnetic">Take a Tour</button>
-                </div>
+        <section id="home" class="hero-section">
+            <div class="hero-background">
+                <img src="images/hero_particles.svg" alt="Quantum Particles" class="hero-particles">
             </div>
-            <div class="hero-visuals">
-                <img src="images/hero_quantum.svg" alt="Quantum Physics Visualization" class="hero-main-img float">
-                <div class="quantum-particles">
-                    <img src="images/quantum_particles.svg" alt="Quantum Particles" class="particle-overlay">
-                    <img src="images/wave_animation.svg" alt="Wave Function" class="wave-overlay">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="welcome-text">Welcome to</span>
+                    <span class="quantum-text">Quantum Physics</span>
+                </h1>
+                <p class="hero-description">Discover the fascinating world of quantum mechanics through interactive learning</p>
+                <div class="hero-buttons">
+                    <button class="btn primary-btn" onclick="startLearning()">Start Learning</button>
+                    <button class="btn secondary-btn" onclick="takeTour()">Take a Tour</button>
+                </div>
+                <div class="hero-features">
+                    <div class="feature">
+                        <img src="images/wave_particle_diagram.svg" alt="Wave Particle" class="feature-icon">
+                        <span>Wave-Particle Duality</span>
+                    </div>
+                    <div class="feature">
+                        <img src="images/quantum_superposition.svg" alt="Superposition" class="feature-icon">
+                        <span>Quantum Superposition</span>
+                    </div>
+                    <div class="feature">
+                        <img src="images/quantum_entanglement.svg" alt="Entanglement" class="feature-icon">
+                        <span>Quantum Entanglement</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -63,19 +76,30 @@
                         <img src="images/double_slit_setup.svg" alt="Double Slit Experiment" class="concept-overlay">
                     </div>
                     <h3>Wave-Particle Duality</h3>
-                    <div class="interactive-demo" id="wave-particle-demo">
-                        <img src="images/interference_pattern.svg" alt="Interference Pattern" class="demo-img">
-                    </div>
                     <div class="concept-content">
                         <p>Wave-particle duality is a fundamental principle of quantum mechanics that describes how every particle or quantum entity can be described as either a wave or a particle. Key points:</p>
-                        <ul>
-                            <li>Particles like electrons and photons can behave as both waves and particles</li>
-                            <li>The wave nature is described by the wave function</li>
-                            <li>Measurement causes the wave function to collapse into a particle state</li>
-                        </ul>
+                        <div class="key-points">
+                            <div class="point">
+                                <p>Particles like electrons and photons can behave as both waves and particles</p>
+                                <img src="images/wave_particle_diagram.svg" alt="Wave and Particle Behavior" class="concept-image">
+                            </div>
+                            <div class="point">
+                                <p>The wave nature is described by the wave function</p>
+                                <img src="images/wave_function.svg" alt="Wave Function" class="concept-image">
+                            </div>
+                            <div class="point">
+                                <p>Measurement causes the wave function to collapse into a particle state</p>
+                                <img src="images/measurement_collapse.svg" alt="Wave Function Collapse" class="concept-image">
+                            </div>
+                        </div>
+
                         <div class="example-box">
-                            <h4>Real-World Example:</h4>
+                            <h3>Real-World Example:</h3>
                             <p>Light behaving as both a wave (interference in double-slit experiment) and as particles (photoelectric effect)</p>
+                            <div class="example-images">
+                                <img src="images/double_slit_setup.svg" alt="Double Slit Experiment" class="example-image">
+                                <img src="images/photoelectric_effect.svg" alt="Photoelectric Effect" class="example-image">
+                            </div>
                         </div>
                     </div>
                 </div>

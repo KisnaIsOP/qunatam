@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Particle Glow -->
+        <radialGradient id="particle-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#64ffda;stop-opacity:0.5"/>
+            <stop offset="100%" style="stop-color:#64ffda;stop-opacity:0"/>
+        </radialGradient>
+        
+        <!-- Wave Pattern -->
+        <pattern id="wave-pattern" width="200" height="200" patternUnits="userSpaceOnUse">
+            <path d="M 0 100 C 40 80, 60 120, 100 100 C 140 80, 160 120, 200 100" 
+                  fill="none" stroke="#64ffda" stroke-width="1" stroke-opacity="0.3"/>
+        </pattern>
+    </defs>
+
+    <!-- Background Waves -->
+    <rect width="100%" height="100%" fill="url(#wave-pattern)"/>
+
+    <!-- Animated Particles -->
+    <g class="particles">
+        <!-- Particle 1 -->
+        <g transform="translate(100,100)">
+            <circle r="30" fill="url(#particle-glow)">
+                <animate attributeName="r" values="30;35;30" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle r="5" fill="#64ffda">
+                <animate attributeName="r" values="5;7;5" dur="3s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+
+        <!-- Particle 2 -->
+        <g transform="translate(600,200)">
+            <circle r="40" fill="url(#particle-glow)">
+                <animate attributeName="r" values="40;45;40" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle r="6" fill="#64ffda">
+                <animate attributeName="r" values="6;8;6" dur="4s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+
+        <!-- Particle 3 -->
+        <g transform="translate(300,400)">
+            <circle r="35" fill="url(#particle-glow)">
+                <animate attributeName="r" values="35;40;35" dur="3.5s" repeatCount="indefinite"/>
+            </circle>
+            <circle r="5" fill="#64ffda">
+                <animate attributeName="r" values="5;7;5" dur="3.5s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+
+        <!-- Connecting Lines -->
+        <path d="M 100 100 L 300 400 L 600 200 Z" 
+              stroke="#64ffda" stroke-width="1" fill="none" stroke-opacity="0.2">
+            <animate attributeName="stroke-opacity" 
+                     values="0.2;0.4;0.2" dur="4s" repeatCount="indefinite"/>
+        </path>
+    </g>
+
+    <!-- Quantum Symbols -->
+    <g font-family="Arial" font-size="24" fill="#64ffda" fill-opacity="0.3">
+        <text x="150" y="150">ψ</text>
+        <text x="450" y="250">ℏ</text>
+        <text x="250" y="350">φ</text>
+        <text x="550" y="150">∇</text>
+    </g>
+</svg>

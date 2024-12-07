@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <defs>
+        <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0a192f;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#112240;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+
+    <!-- Background Rectangle -->
+    <rect width="100%" height="100%" fill="url(#bg-gradient)"/>
+
+    <!-- Coordinate System -->
+    <g transform="translate(50, 100)">
+        <!-- Axes -->
+        <line x1="0" y1="0" x2="200" y2="0" stroke="#8892b0" stroke-width="1"/>
+        <line x1="0" y1="-50" x2="0" y2="50" stroke="#8892b0" stroke-width="1"/>
+        
+        <!-- Wave Function -->
+        <path d="M 0 0 C 25 -40, 50 -40, 75 0 C 100 40, 125 40, 150 0 C 175 -40, 200 -40, 225 0"
+              fill="none" stroke="#64ffda" stroke-width="2">
+            <animate attributeName="d" 
+                     values="M 0 0 C 25 -40, 50 -40, 75 0 C 100 40, 125 40, 150 0 C 175 -40, 200 -40, 225 0;
+                             M 0 0 C 25 40, 50 40, 75 0 C 100 -40, 125 -40, 150 0 C 175 40, 200 40, 225 0;
+                             M 0 0 C 25 -40, 50 -40, 75 0 C 100 40, 125 40, 150 0 C 175 -40, 200 -40, 225 0"
+                     dur="3s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- Probability Density -->
+        <path d="M 0 30 Q 50 10, 100 30 T 200 30" 
+              stroke="#64ffda" stroke-width="1" fill="none" stroke-opacity="0.5"/>
+    </g>
+
+    <!-- Labels -->
+    <text x="250" y="105" style="font-family: Arial; font-size: 12px; fill: #8892b0;">x</text>
+    <text x="45" y="30" style="font-family: Arial; font-size: 12px; fill: #8892b0;">ψ(x)</text>
+</svg>
