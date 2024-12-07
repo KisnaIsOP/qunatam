@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Quantum Experiments</title>
+</head>
+<body>
+    <header>
+        <h1>Quantum Experiments</h1>
+    </header>
+    <main class="main-content">
+        <!-- Quantum Teleportation Experiment -->
+        <section id="quantum-teleportation" class="experiment-section">
+            <h2>Quantum Teleportation</h2>
+            <p>Explore the fascinating concept of quantum teleportation, where quantum information is transmitted instantly.</p>
+            <div class="experiment-visual">
+                <img src="images/quantum_teleportation.svg" alt="Quantum Teleportation" class="experiment-image">
+            </div>
+            <button class="btn btn-experiment" onclick="startTeleportation()">Start Experiment</button>
+            <div id="teleportation-result" class="experiment-result"></div>
+        </section>
+
+        <!-- Stern-Gerlach Experiment -->
+        <section id="stern-gerlach" class="experiment-section">
+            <h2>Stern-Gerlach Experiment</h2>
+            <p>Manipulate magnetic fields to observe quantum spin properties in the Stern-Gerlach experiment.</p>
+            <div class="experiment-visual">
+                <img src="images/stern_gerlach.svg" alt="Stern-Gerlach Experiment" class="experiment-image">
+            </div>
+            <button class="btn btn-experiment" onclick="startSternGerlach()">Start Experiment</button>
+            <div id="stern-gerlach-result" class="experiment-result"></div>
+        </section>
+    </main>
+    <script>
+        function startTeleportation() {
+            console.log('Quantum teleportation experiment started.');
+            document.getElementById('teleportation-result').innerHTML = '<p>Quantum teleportation initiated! Observe the entangled particles.</p>';
+        }
+
+        function startSternGerlach() {
+            console.log('Stern-Gerlach experiment started.');
+            document.getElementById('stern-gerlach-result').innerHTML = '<p>Stern-Gerlach experiment started! Observe the spin states.</p>';
+        }
+    </script>
+</body>
+</html>
