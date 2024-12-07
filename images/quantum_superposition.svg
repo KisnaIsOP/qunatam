@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <defs>
+        <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0a192f;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#112240;stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- Bloch Sphere Pattern -->
+        <radialGradient id="sphere-gradient" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#64ffda;stop-opacity:0.2"/>
+            <stop offset="100%" style="stop-color:#64ffda;stop-opacity:0"/>
+        </radialGradient>
+    </defs>
+
+    <!-- Background Rectangle -->
+    <rect width="100%" height="100%" fill="url(#bg-gradient)"/>
+
+    <!-- Title -->
+    <text x="400" y="50" text-anchor="middle" 
+          style="font-family: Arial; font-size: 24px; fill: #ccd6f6;">
+        Quantum Superposition
+    </text>
+
+    <!-- Bloch Sphere -->
+    <g transform="translate(400, 200)">
+        <!-- Sphere -->
+        <circle r="100" fill="url(#sphere-gradient)" stroke="#64ffda" stroke-width="1"/>
+        
+        <!-- Axes -->
+        <line x1="-100" y1="0" x2="100" y2="0" stroke="#8892b0" stroke-width="1" stroke-dasharray="5,5"/>
+        <line x1="0" y1="-100" x2="0" y2="100" stroke="#8892b0" stroke-width="1" stroke-dasharray="5,5"/>
+        
+        <!-- State Vector -->
+        <line x1="0" y1="0" x2="70.7" y2="-70.7" stroke="#64ffda" stroke-width="2">
+            <animateTransform attributeName="transform" type="rotate"
+                            from="0" to="360" dur="10s" repeatCount="indefinite"/>
+        </line>
+        
+        <!-- Probability Amplitudes -->
+        <g>
+            <circle cx="70.7" cy="-70.7" r="5" fill="#64ffda">
+                <animateTransform attributeName="transform" type="rotate"
+                                from="0" to="360" dur="10s" repeatCount="indefinite"/>
+            </circle>
+            <text x="85" y="-85" style="font-family: Arial; font-size: 14px; fill: #ccd6f6;">
+                |ψ⟩
+            </text>
+        </g>
+        
+        <!-- Labels -->
+        <text x="110" y="0" style="font-family: Arial; font-size: 14px; fill: #8892b0;">|0⟩</text>
+        <text x="-120" y="0" style="font-family: Arial; font-size: 14px; fill: #8892b0;">|1⟩</text>
+        <text x="0" y="-110" style="font-family: Arial; font-size: 14px; fill: #8892b0;">|+⟩</text>
+        <text x="0" y="120" style="font-family: Arial; font-size: 14px; fill: #8892b0;">|-⟩</text>
+    </g>
+
+    <!-- Superposition Equation -->
+    <g transform="translate(400, 350)">
+        <text text-anchor="middle" style="font-family: Arial; font-size: 18px; fill: #ccd6f6;">
+            |ψ⟩ = α|0⟩ + β|1⟩
+        </text>
+        <text text-anchor="middle" y="25" style="font-family: Arial; font-size: 14px; fill: #8892b0;">
+            |α|² + |β|² = 1
+        </text>
+    </g>
+
+    <!-- Information Box -->
+    <g transform="translate(50, 300)">
+        <rect width="250" height="80" rx="5" 
+              style="fill:#172a45;stroke:#64ffda;stroke-width:1"/>
+        <text x="10" y="25" style="font-family: Arial; font-size: 12px; fill: #ccd6f6;">
+            Quantum Superposition:
+        </text>
+        <text x="10" y="45" style="font-family: Arial; font-size: 12px; fill: #8892b0;">
+            • Multiple states simultaneously
+        </text>
+        <text x="10" y="65" style="font-family: Arial; font-size: 12px; fill: #8892b0;">
+            • Collapses upon measurement
+        </text>
+    </g>
+
+    <!-- Probability Waves -->
+    <g transform="translate(600, 150)">
+        <path d="M 0 0 C 20 -20, 40 -20, 60 0 C 80 20, 100 20, 120 0" 
+              stroke="#64ffda" stroke-width="2" fill="none" stroke-opacity="0.5">
+            <animate attributeName="stroke-opacity" values="0.5;1;0.5" 
+                     dur="3s" repeatCount="indefinite"/>
+        </path>
+        <path d="M 0 50 C 20 30, 40 30, 60 50 C 80 70, 100 70, 120 50" 
+              stroke="#64ffda" stroke-width="2" fill="none" stroke-opacity="0.5">
+            <animate attributeName="stroke-opacity" values="0.5;1;0.5" 
+                     dur="3s" repeatCount="indefinite" begin="1.5s"/>
+        </path>
+    </g>
+</svg>

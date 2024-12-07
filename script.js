@@ -507,3 +507,109 @@ const startTour = () => {
 
     showTourStep();
 };
+
+// Custom Cursor
+const cursor = document.createElement('div');
+const cursorFollower = document.createElement('div');
+cursor.className = 'cursor';
+cursorFollower.className = 'cursor-follower';
+document.body.appendChild(cursor);
+document.body.appendChild(cursorFollower);
+
+let mouseX = 0;
+let mouseY = 0;
+let cursorX = 0;
+let cursorY = 0;
+let followerX = 0;
+let followerY = 0;
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+// Magnetic effect for interactive elements
+const magneticElements = document.querySelectorAll('.magnetic');
+magneticElements.forEach(elem => {
+    elem.addEventListener('mousemove', (e) => {
+        const rect = elem.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const deltaX = e.clientX - centerX;
+        const deltaY = e.clientY - centerY;
+        
+        elem.style.transform = `translate(${deltaX * 0.2}px, ${deltaY * 0.2}px)`;
+        cursor.style.transform = `scale(2)`;
+    });
+
+    elem.addEventListener('mouseleave', () => {
+        elem.style.transform = '';
+        cursor.style.transform = '';
+    });
+});
+
+// Particle trail effect
+function createParticle(x, y) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = x + 'px';
+    particle.style.top = y + 'px';
+    particle.style.width = Math.random() * 10 + 5 + 'px';
+    particle.style.height = particle.style.width;
+    document.body.appendChild(particle);
+
+    setTimeout(() => {
+        particle.remove();
+    }, 1000);
+}
+
+let lastParticleTime = 0;
+document.addEventListener('mousemove', (e) => {
+    const currentTime = Date.now();
+    if (currentTime - lastParticleTime > 50) {
+        createParticle(e.clientX, e.clientY);
+        lastParticleTime = currentTime;
+    }
+});
+
+// Smooth cursor animation
+function animate() {
+    // Cursor movement
+    cursorX += (mouseX - cursorX) * 0.2;
+    cursorY += (mouseY - cursorY) * 0.2;
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top = cursorY + 'px';
+
+    // Follower movement
+    followerX += (mouseX - followerX) * 0.1;
+    followerY += (mouseY - followerY) * 0.1;
+    cursorFollower.style.left = followerX + 'px';
+    cursorFollower.style.top = followerY + 'px';
+
+    requestAnimationFrame(animate);
+}
+animate();
+
+// Loading animation
+window.addEventListener('load', () => {
+    const loader = document.querySelector('.loading-animation');
+    if (loader) {
+        loader.style.opacity = '0';
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 500);
+    }
+});
+
+// Interactive hover effects
+document.querySelectorAll('.interactive-btn').forEach(button => {
+    button.addEventListener('mouseover', () => {
+        cursor.style.transform = 'scale(1.5)';
+        cursorFollower.style.transform = 'scale(1.5)';
+    });
+
+    button.addEventListener('mouseout', () => {
+        cursor.style.transform = '';
+        cursorFollower.style.transform = '';
+    });
+});
